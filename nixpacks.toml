@@ -1,0 +1,17 @@
+[phases.setup]
+nixPkgs = ["nodejs", "bun"]
+
+[phases.install]
+cmds = [
+  "bun install",
+  "cd docs && bun install"
+]
+
+[phases.build]
+cmds = [
+  "bun run build:packages",
+  "cd docs && bun run build"
+]
+
+[start]
+cmd = "npx serve -s docs/.vitepress/dist -l $PORT"
