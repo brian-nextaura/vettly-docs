@@ -9,12 +9,7 @@ export interface ModerationResult {
   safe: boolean;
   flagged: boolean;
   action: 'allow' | 'warn' | 'flag' | 'block';
-  categories: Array<{
-    category: string;
-    score: number;
-    threshold: number;
-    violated: boolean;
-  }>;
+  categories: CheckResponse['categories'];
   isChecking: boolean;
   error: string | null;
 }
