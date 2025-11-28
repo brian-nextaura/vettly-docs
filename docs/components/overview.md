@@ -1,6 +1,6 @@
 # Component Overview
 
-Vettly provides production-ready React components that protect your community from harmful content—before users ever see it.
+Vettly provides production-ready React components that protect your community from harmful content - before users ever see it.
 
 ## Available Components
 
@@ -100,7 +100,7 @@ await check({
 })
 
 if (result.action === 'block') {
-  // Harmful content blocked—your users never see it
+  // Harmful content blocked - your users never see it
 }
 ```
 

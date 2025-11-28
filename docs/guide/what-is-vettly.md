@@ -2,11 +2,11 @@
 
 **Trust takes time to earn. Toxic content destroys it instantly.**
 
-Vettly is AI-powered content moderation that protects your users from harmful content—before they ever see it. Your users don't see what Vettly blocks. They just feel safe.
+Vettly is AI-powered content moderation that protects your users from harmful content - before they ever see it. Your users don't see what Vettly blocks. They just feel safe.
 
 ## The Problem
 
-One bad experience can undo months of community building. One toxic comment can drive users away forever. Your users remember how they feel—and negativity sticks.
+One bad experience can undo months of community building. One toxic comment can drive users away forever. Your users remember how they feel - and negativity sticks.
 
 User-generated content can contain:
 
@@ -59,7 +59,7 @@ Components provide automatic feedback:
 ```tsx
 onModerationResult={(result) => {
   if (result.action === 'block') {
-    // Harmful content blocked—your users never see it
+    // Harmful content blocked - your users never see it
   }
 }}
 ```

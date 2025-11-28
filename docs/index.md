@@ -16,7 +16,7 @@ hero:
 features:
   - icon: 🛡️
     title: Real-Time Protection
-    details: Block harmful content before your users see it—with instant feedback as they type
+    details: Block harmful content before your users see it - with instant feedback as they type
 
   - icon: 🎨
     title: Built-in Safety
@@ -24,7 +24,7 @@ features:
 
   - icon: 🎬
     title: Multi-Modal Coverage
-    details: Protect text, images, and videos—all checked before users see them
+    details: Protect text, images, and videos - all checked before users see them
 
   - icon: ⚡
     title: Type-Safe SDK
@@ -32,11 +32,11 @@ features:
 
   - icon: 🎯
     title: Flexible Policies
-    details: Strict, moderate, or permissive—you decide what level of protection fits your platform
+    details: Strict, moderate, or permissive - you decide what level of protection fits your platform
 
   - icon: 🚀
     title: Framework Integrations
-    details: Works with React, Next.js, Express, Python, and more—in minutes, not months
+    details: Works with React, Next.js, Express, Python, and more - in minutes, not months
 ---
 
 ## Quick Start
@@ -72,7 +72,7 @@ function App() {
       placeholder="Type something..."
       onModerationResult={(result) => {
         if (result.action === 'block') {
-          // Harmful content blocked—your users never see it
+          // Harmful content blocked - your users never see it
         }
       }}
     />
@@ -119,7 +119,7 @@ Protected video uploads with frame analysis:
 
 **Trust takes time to earn. Toxic content destroys it instantly.**
 
-Your users remember how they feel. One toxic comment, one harmful image, one bad experience—and they're gone. Vettly stops harmful content before it reaches your community.
+Your users remember how they feel. One toxic comment, one harmful image, one bad experience - and they're gone. Vettly stops harmful content before it reaches your community.
 
 | Feature | Vettly | Others |
 |---------|--------|--------|
