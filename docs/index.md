@@ -3,40 +3,40 @@ layout: home
 
 hero:
   name: Vettly
-  text: AI-Powered Content Moderation
-  tagline: Production-ready React components and SDK for moderating text, images, and videos
+  text: Protect Your Users
+  tagline: AI-powered content moderation that blocks harmful content before it reaches your community
   actions:
     - theme: brand
-      text: Get Started
+      text: Start Protecting
       link: /guide/getting-started
     - theme: alt
       text: Try Components
       link: /components/overview
 
 features:
-  - icon: ⚡
-    title: Real-Time Moderation
-    details: Check content as users type with debounced API calls and visual feedback
+  - icon: 🛡️
+    title: Real-Time Protection
+    details: Block harmful content before your users see it—with instant feedback as they type
 
   - icon: 🎨
-    title: Beautiful Components
-    details: Production-ready React components with built-in moderation, styling, and error handling
+    title: Built-in Safety
+    details: Drop-in React components that protect your community out of the box
 
   - icon: 🎬
-    title: Multi-Modal Support
-    details: Moderate text, images, and videos with frame-by-frame analysis
+    title: Multi-Modal Coverage
+    details: Protect text, images, and videos—all checked before users see them
 
-  - icon: 🛡️
+  - icon: ⚡
     title: Type-Safe SDK
     details: Full TypeScript support with comprehensive type definitions
 
   - icon: 🎯
-    title: Customizable Policies
-    details: Pre-built strict, moderate, and permissive policies or create your own
+    title: Flexible Policies
+    details: Strict, moderate, or permissive—you decide what level of protection fits your platform
 
   - icon: 🚀
-    title: Framework Agnostic
-    details: Works with React, Next.js, Express, or vanilla JavaScript
+    title: Framework Integrations
+    details: Works with React, Next.js, Express, Python, and more—in minutes, not months
 ---
 
 ## Quick Start
@@ -59,7 +59,7 @@ yarn add @nextauralabs/vettly-react
 
 :::
 
-### Use Components
+### Protect Your Users
 
 ```tsx
 import { ModeratedTextarea } from '@nextauralabs/vettly-react'
@@ -70,76 +70,80 @@ function App() {
     <ModeratedTextarea
       apiKey="your-api-key"
       placeholder="Type something..."
-      onModerationResult={(result) => console.log(result)}
+      onModerationResult={(result) => {
+        if (result.action === 'block') {
+          // Harmful content blocked—your users never see it
+        }
+      }}
     />
   )
 }
 ```
 
-## Features
+## Components
 
 ### ModeratedTextarea
 
-Real-time content checking with visual feedback:
+Real-time protection with visual feedback:
 
-- ✅ Debounced API calls (configurable delay)
+- ✅ Blocks harmful content as users type
 - ✅ Color-coded borders (green/yellow/red)
-- ✅ Status messages
-- ✅ Block unsafe content option
+- ✅ Clear status messages
 - ✅ Fully customizable
 
 [View Component →](/components/textarea)
 
 ### ModeratedImageUpload
 
-Drag-and-drop image upload with moderation:
+Protected image uploads:
 
 - ✅ Drag & drop support
 - ✅ Image preview
-- ✅ Automatic moderation on upload
+- ✅ Automatic protection on upload
 - ✅ Visual feedback
-- ✅ File size/type validation
 
 [View Component →](/components/image-upload)
 
 ### ModeratedVideoUpload
 
-Advanced video upload with frame extraction:
+Protected video uploads with frame analysis:
 
 - ✅ Video preview with thumbnail
-- ✅ Frame-by-frame analysis
+- ✅ Frame-by-frame protection
 - ✅ Progress tracking
-- ✅ Visual feedback per frame
 - ✅ Comprehensive error handling
 
 [View Component →](/components/video-upload)
 
 ## Why Vettly?
 
+**Trust takes time to earn. Toxic content destroys it instantly.**
+
+Your users remember how they feel. One toxic comment, one harmful image, one bad experience—and they're gone. Vettly stops harmful content before it reaches your community.
+
 | Feature | Vettly | Others |
 |---------|--------|--------|
-| **Multi-Modal** | ✅ Text, Images, Videos | ⚠️ Usually text-only |
+| **Multi-Modal Protection** | ✅ Text, Images, Videos | ⚠️ Usually text-only |
 | **React Components** | ✅ Production-ready | ❌ Build your own |
 | **Video Frame Analysis** | ✅ Advanced | ❌ Not available |
 | **TypeScript** | ✅ Full support | ⚠️ Partial |
 | **Real-time Feedback** | ✅ Built-in | ❌ Manual |
-| **Framework Integrations** | ✅ React, Next.js, Express | ❌ SDK only |
+| **Framework Integrations** | ✅ React, Next.js, Express, Python | ❌ SDK only |
 
 ## Pricing
 
-Transparent, usage-based pricing:
+Peace of mind, starting free:
 
-- **Text Moderation**: FREE (OpenAI + Perspective)
-- **Image Moderation**: $0.0003 per image (~$3 per 10K)
-- **Video Moderation**: $0.001 per video (~$1 per 1K)
+- **Text Protection**: FREE (OpenAI + Perspective)
+- **Image Protection**: $0.0003 per image (~$3 per 10K)
+- **Video Protection**: $0.001 per video (~$1 per 1K)
 
 [View Full Pricing →](https://vettly.dev/pricing)
 
 ## Examples
 
-Check out complete working examples:
+See protection in action:
 
-- [Social Feed](/examples/social-feed) - Social media with content moderation
-- [Forum](/examples/forum) - Discussion board with moderation
-- [Chat App](/examples/chat) - Real-time chat with safety
-
+- [Social Feed](/examples/social-feed) - Social media with content protection
+- [Forum](/examples/forum) - Discussion board with community safety
+- [Chat App](/examples/chat) - Real-time chat that keeps users safe

@@ -1,8 +1,12 @@
 # What is Vettly?
 
-Vettly is an AI-powered content moderation platform that helps you keep your application safe from harmful content.
+**Trust takes time to earn. Toxic content destroys it instantly.**
+
+Vettly is AI-powered content moderation that protects your users from harmful content—before they ever see it. Your users don't see what Vettly blocks. They just feel safe.
 
 ## The Problem
+
+One bad experience can undo months of community building. One toxic comment can drive users away forever. Your users remember how they feel—and negativity sticks.
 
 User-generated content can contain:
 
@@ -17,13 +21,13 @@ Manually moderating content doesn't scale, and building your own AI moderation s
 
 ## The Solution
 
-Vettly provides:
+Vettly protects your community with:
 
-1. **Production-ready React components** with built-in moderation
-2. **TypeScript SDK** for custom implementations
-3. **Multi-modal AI** that understands text, images, and videos
-4. **Real-time feedback** for better user experience
-5. **Framework integrations** for Next.js, Express, and more
+1. **Production-ready React components** that block harmful content in real-time
+2. **TypeScript SDK** for custom protection implementations
+3. **Multi-modal AI** that checks text, images, and videos before users see them
+4. **Real-time feedback** so users know immediately when content crosses the line
+5. **Framework integrations** for Next.js, Express, Python, and more
 
 ## How It Works
 
@@ -36,17 +40,17 @@ Vettly provides:
 />
 ```
 
-### 2. Real-Time Checking
+### 2. Real-Time Protection
 
 As users type, Vettly:
 - Debounces API calls (configurable)
-- Sends content to AI moderation
+- Checks content against AI moderation
 - Returns instant results
 
 ### 3. Visual Feedback
 
 Components provide automatic feedback:
-- 🟢 Green border = Safe content
+- 🟢 Green border = Safe for your community
 - 🟡 Yellow border = Warning
 - 🔴 Red border = Blocked
 
@@ -54,29 +58,29 @@ Components provide automatic feedback:
 
 ```tsx
 onModerationResult={(result) => {
-  if (result.decision === 'reject') {
-    showWarning('Content violates our guidelines')
+  if (result.action === 'block') {
+    // Harmful content blocked—your users never see it
   }
 }}
 ```
 
-## Multi-Modal Support
+## Multi-Modal Protection
 
-### Text Moderation
+### Text Protection
 
 - Toxicity & hate speech
 - Spam detection
 - PII detection
 - Bot activity
 
-### Image Moderation
+### Image Protection
 
 - NSFW content
 - Violence & gore
 - Inappropriate imagery
 - Visual spam
 
-### Video Moderation
+### Video Protection
 
 - Frame-by-frame analysis
 - Thumbnail generation
@@ -91,25 +95,25 @@ onModerationResult={(result) => {
 - ✅ **Zero config** - Works out of the box
 - ✅ **Customizable** - Override any behavior
 - ✅ **Framework agnostic** - Use anywhere
-- ✅ **Comprehensive docs** - Learn quickly
+- ✅ **Minutes, not months** - Integrate quickly
 
-### For Users
+### For Your Users
 
 - ✅ **Real-time feedback** - Know immediately
 - ✅ **Clear messaging** - Understand why
 - ✅ **Fast responses** - Sub-second latency
 - ✅ **Accessible** - WCAG compliant
-- ✅ **Mobile-friendly** - Touch optimized
+- ✅ **Safe community** - They just feel safe
 
 ## Use Cases
 
 ### Social Platforms
 
-Moderate posts, comments, and messages in real-time.
+Protect posts, comments, and messages in real-time.
 
 ```tsx
 <ModeratedTextarea
-  policy="balanced"
+  policyId="moderate"
   onModerationResult={handleComment}
 />
 ```
@@ -120,7 +124,7 @@ Check product listings for prohibited items.
 
 ```tsx
 <ModeratedImageUpload
-  policy="strict"
+  policyId="strict"
   blockUnsafe
 />
 ```
@@ -130,8 +134,8 @@ Check product listings for prohibited items.
 Keep discussions safe and on-topic.
 
 ```tsx
-const client = new VettlyClient({ apiKey })
-await client.check({ content: post.body, type: 'text' })
+const client = new ModerationClient({ apiKey })
+const result = await client.check({ content: post.body, policyId: 'moderate' })
 ```
 
 ### Dating Apps
@@ -140,25 +144,25 @@ Protect users from harassment and NSFW content.
 
 ```tsx
 <ModeratedVideoUpload
-  policy="strict"
+  policyId="strict"
   maxDuration={30}
 />
 ```
 
-## Pricing Philosophy
+## Pricing
 
-**Pay only for what you use:**
+Peace of mind, starting free:
 
-- Text moderation: FREE (unlimited)
-- Image moderation: $0.0003 per image
-- Video moderation: $0.001 per video
+- Text protection: FREE (unlimited)
+- Image protection: $0.0003 per image
+- Video protection: $0.001 per video
 
 No monthly fees, no minimums, no surprises.
 
 ## Next Steps
 
-Ready to get started?
+Ready to protect your community?
 
-- [Installation & Setup →](/guide/getting-started)
+- [Getting Started →](/guide/getting-started)
 - [Browse Components →](/components/overview)
 - [View Examples →](/examples/social-feed)

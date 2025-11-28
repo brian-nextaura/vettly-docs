@@ -1,12 +1,12 @@
 # Component Overview
 
-Vettly provides production-ready React components with built-in content moderation.
+Vettly provides production-ready React components that protect your community from harmful content—before users ever see it.
 
 ## Available Components
 
 ### ModeratedTextarea
 
-Real-time text moderation as users type.
+Real-time protection as users type.
 
 ```tsx
 import { ModeratedTextarea } from '@nextauralabs/vettly-react'
@@ -14,15 +14,15 @@ import { ModeratedTextarea } from '@nextauralabs/vettly-react'
 <ModeratedTextarea
   apiKey="your-key"
   placeholder="Type a comment..."
-  policy="balanced"
+  policyId="moderate"
 />
 ```
 
 **Features:**
-- ✅ Debounced API calls
+- ✅ Blocks harmful content as users type
 - ✅ Visual feedback (color-coded borders)
-- ✅ Status messages
-- ✅ Block unsafe content
+- ✅ Clear status messages
+- ✅ Prevents unsafe content submission
 - ✅ Fully accessible
 
 [View Details →](/components/textarea)
@@ -31,7 +31,7 @@ import { ModeratedTextarea } from '@nextauralabs/vettly-react'
 
 ### ModeratedImageUpload
 
-Image upload with drag-and-drop and automatic moderation.
+Protected image uploads with drag-and-drop.
 
 ```tsx
 import { ModeratedImageUpload } from '@nextauralabs/vettly-react'
@@ -39,7 +39,9 @@ import { ModeratedImageUpload } from '@nextauralabs/vettly-react'
 <ModeratedImageUpload
   apiKey="your-key"
   onUpload={(file, result) => {
-    console.log('Image moderated:', result)
+    if (result.safe) {
+      // Safe to show your community
+    }
   }}
 />
 ```
@@ -47,7 +49,7 @@ import { ModeratedImageUpload } from '@nextauralabs/vettly-react'
 **Features:**
 - ✅ Drag & drop support
 - ✅ Image preview
-- ✅ Automatic moderation
+- ✅ Automatic protection on upload
 - ✅ File validation
 - ✅ Progress indicator
 
@@ -57,7 +59,7 @@ import { ModeratedImageUpload } from '@nextauralabs/vettly-react'
 
 ### ModeratedVideoUpload
 
-Advanced video upload with frame-by-frame analysis.
+Protected video uploads with frame-by-frame analysis.
 
 ```tsx
 import { ModeratedVideoUpload } from '@nextauralabs/vettly-react'
@@ -71,9 +73,9 @@ import { ModeratedVideoUpload } from '@nextauralabs/vettly-react'
 
 **Features:**
 - ✅ Video preview with thumbnail
-- ✅ Frame extraction
+- ✅ Frame-by-frame protection
 - ✅ Progress tracking
-- ✅ Per-frame moderation
+- ✅ Per-frame analysis
 - ✅ Comprehensive feedback
 
 [View Details →](/components/video-upload)
@@ -82,7 +84,7 @@ import { ModeratedVideoUpload } from '@nextauralabs/vettly-react'
 
 ### useModeration Hook
 
-Low-level hook for custom implementations.
+Build your own protected UI.
 
 ```tsx
 import { useModeration } from '@nextauralabs/vettly-react'
@@ -94,8 +96,12 @@ const { check, result, loading } = useModeration({
 // Check any content
 await check({
   content: 'User text',
-  type: 'text'
+  policyId: 'moderate'
 })
+
+if (result.action === 'block') {
+  // Harmful content blocked—your users never see it
+}
 ```
 
 **Features:**
@@ -118,7 +124,7 @@ interface CommonProps {
   apiKey: string
 
   // Optional
-  policy?: 'strict' | 'balanced' | 'permissive'
+  policyId?: 'strict' | 'moderate' | 'permissive'
   baseUrl?: string
   debounceMs?: number
   blockUnsafe?: boolean
@@ -128,6 +134,14 @@ interface CommonProps {
   onError?: (error: Error) => void
 }
 ```
+
+## Protection Levels
+
+| Policy | Use Case | Protection Level |
+|--------|----------|------------------|
+| `strict` | Schools, kids apps, enterprise | Maximum protection |
+| `moderate` | Social apps, forums, comments | Balanced |
+| `permissive` | Gaming, creative writing | Fewer restrictions |
 
 ## Styling
 

@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Vettly',
-  description: 'AI-powered content moderation platform - Documentation & Component Library',
+  description: 'Protect your users from harmful content—Documentation & API Reference',
 
   // Ignore dead links for now (we'll add the pages later)
   ignoreDeadLinks: true,
